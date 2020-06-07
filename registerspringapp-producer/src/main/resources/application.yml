@@ -1,0 +1,15 @@
+ server:
+  port: 8888
+  
+ spring:
+  application:
+    name: user-producer 
+  main:
+    allow-bean-definition-overriding: true
+
+ eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9000/eureka/
+
+      

@@ -23,6 +23,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>registerspringappdatabase</name>
 	<description>Demo project for Spring Boot</description>
+	<packaging>jar</packaging>
 
 	<repositories>
 		<repository>

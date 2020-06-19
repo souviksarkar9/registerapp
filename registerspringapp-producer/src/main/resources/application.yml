@@ -1,5 +1,5 @@
  server:
-  port: 8888
+  port: 9003
   
  spring:
   application:
@@ -8,8 +8,11 @@
     allow-bean-definition-overriding: true
 
  eureka:
+  instance:
+    preferIpAddress: true
+    instance-id:
   client:
     serviceUrl:
-      defaultZone: http://172.17.0.2:9000/eureka/
+      defaultZone: http://172.17.0.1:9001/eureka/
 
       

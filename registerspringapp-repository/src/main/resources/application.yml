@@ -2,6 +2,8 @@
   port: 9002
   
  spring:
+  datasource:
+    url: jdbc:h2:file:~/db/mydb
   application:
     name: user-repository 
   main:
@@ -18,7 +20,6 @@
   client:
     serviceUrl:
       defaultZone: http://172.17.0.1:9001/eureka/
-
 
 
       

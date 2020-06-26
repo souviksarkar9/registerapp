@@ -1,0 +1,49 @@
+version: "3"
+
+services:
+   resgisteruserapp-eurekaserver:
+     image: souviksarkar9/registeruserapp-eurekaserver
+     networks:
+       - producer-consumer-repo-network
+     ports:
+       - 9001:9001
+       
+   resgisteruserapp-repository:
+     image: souviksarkar9/registeruserapp-repository
+     networks:
+       - producer-consumer-repo-network
+     ports:
+       - 9002:9002
+     depends_on:
+       - resgisteruserapp-eurekaserver
+   
+   resgisteruserapp-producer:
+     image: souviksarkar9/registeruserapp-producer
+     networks:
+       - producer-consumer-repo-network
+     ports:
+       - 9003:9003
+     depends_on:
+       - resgisteruserapp-eurekaserver
+	   - resgisteruserapp-repository       
+                   
+   resgisteruserapp-consumer:
+     image: souviksarkar9/registeruserapp-consumer
+     networks:
+       - producer-consumer-repo-network  
+     ports:
+       - 9004:9004
+     depends_on:
+       - resgisteruserapp-eurekaserver
+	   - resgisteruserapp-repository       
+        
+       
+networks:
+   producer-consumer-repo-network          
+       
+       
+       
+       
+       
+       
+              

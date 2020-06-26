@@ -62,6 +62,53 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>io.fabric8</groupId>
+				<artifactId>docker-maven-plugin</artifactId>
+				<version>0.33.0</version>
+
+				<configuration>
+					<!-- <dockerHost>http://127.0.0.1:2375</dockerHost> -->
+					<!-- this is for Mac and Amazon Linux -->
+					<dockerHost>unix:///var/run/docker.sock</dockerHost>
+					
+					<verbose>true</verbose>
+					<images>
+						<image>
+							<name>souviksarkar9/registeruserapp-eurekaserver</name>
+							<build>
+								<dockerFileDir>${project.basedir}/src/main/docker/</dockerFileDir>
+
+								<!--copies Jar to the maven directory (uses Assembly system) -->
+								<assembly>
+									<descriptorRef>artifact</descriptorRef>
+								</assembly>
+								<tags>
+									<tag>latest</tag>
+								</tags>
+							</build>
+						</image>
+					</images>
+				</configuration>
+
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>build</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>regiteruserapp-eurekaserver</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>push</goal>
+						</goals>
+					</execution>
+				</executions>
+
+
+			</plugin>
 		</plugins>
 	</build>
 

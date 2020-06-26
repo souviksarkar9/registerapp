@@ -3,7 +3,8 @@
   
  spring:
   datasource:
-    url: jdbc:h2:file:~/db/mydb
+    url: jdbc:h2:file:/home/souvik/Downloads
+
   application:
     name: user-repository 
   main:

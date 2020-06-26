@@ -10,6 +10,8 @@ services:
        
    resgisteruserapp-repository:
      image: souviksarkar9/registeruserapp-repository
+     volumes: 
+       - /home/souvik/Downloads/registeruserapp-repository:/home/souvik/Downloads/registeruserapp-repository
      networks:
        - producer-consumer-repo-network
      ports:

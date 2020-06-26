@@ -39,7 +39,7 @@ services:
         
        
 networks:
-   producer-consumer-repo-network          
+   producer-consumer-repo-network:          
        
        
        

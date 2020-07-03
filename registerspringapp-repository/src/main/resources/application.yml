@@ -3,7 +3,7 @@
   
  spring:
   datasource:
-    url: jdbc:h2:file:/home/souvik/Downloads
+    url: jdbc:h2:file:/usr/local/bin/registeruserapp/repo
 
   application:
     name: user-repository 
@@ -20,7 +20,7 @@
     instance-id:
   client:
     serviceUrl:
-      defaultZone: http://172.17.0.1:9001/eureka/
+      defaultZone: http://192.168.0.106:9001/eureka/
 
 
       

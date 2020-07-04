@@ -20,7 +20,7 @@
     instance-id:
   client:
     serviceUrl:
-      defaultZone: http://192.168.0.106:9001/eureka/
+      defaultZone: http://172.17.0.1:9001/eureka/
 
 
       

@@ -16,7 +16,7 @@ services:
        - producer-consumer-repo-network
      ports:     
        - 9002:9002
-     enviroment:
+     environment:
        server.port: 9002
        eureka.client.enabled: 'true'
        eureka.host: resgisteruserapp-eurekaserver
@@ -30,7 +30,7 @@ services:
        - producer-consumer-repo-network
      ports:
        - 9003:9003
-     enviroment:
+     environment:
        server.port: 9003
        eureka.client.enabled: 'true'
        eureka.host: resgisteruserapp-eurekaserver
@@ -45,7 +45,7 @@ services:
        - producer-consumer-repo-network  
      ports:
        - 9004:9004
-     enviroment:
+     environment:
        server.port: 9004
        eureka.client.enabled: 'true'
        eureka.host: resgisteruserapp-eurekaserver

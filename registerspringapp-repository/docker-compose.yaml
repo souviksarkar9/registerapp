@@ -7,7 +7,15 @@ services:
        - producer-consumer-repo-network
      ports:
        - 9001:9001
-       
+     deploy:
+       replicas: 2
+       update_config:
+         delay: 10s 
+       restart_policy:
+         condition: on-failure
+         delay: 5s
+         max_attempts: 3
+         
    resgisteruserapp-repository:
      image: souviksarkar9/registeruserapp-repository
      volumes: 
@@ -16,6 +24,14 @@ services:
        - producer-consumer-repo-network
      ports:     
        - 9002:9002
+     deploy:
+       replicas: 2
+       update_config:
+         delay: 10s 
+       restart_policy:
+         condition: on-failure
+         delay: 5s
+         max_attempts: 3              
      environment:
        server.port: 9002
        eureka.client.enabled: 'true'
@@ -30,6 +46,14 @@ services:
        - producer-consumer-repo-network
      ports:
        - 9003:9003
+     deploy:
+       replicas: 2      
+       update_config:
+         delay: 10s 
+       restart_policy:
+         condition: on-failure
+         delay: 5s
+         max_attempts: 3        
      environment:
        server.port: 9003
        eureka.client.enabled: 'true'
@@ -45,6 +69,14 @@ services:
        - producer-consumer-repo-network  
      ports:
        - 9004:9004
+     deploy:
+       replicas: 2      
+       update_config:
+         delay: 10s 
+       restart_policy:
+         condition: on-failure
+         delay: 5s
+         max_attempts: 3        
      environment:
        server.port: 9004
        eureka.client.enabled: 'true'
